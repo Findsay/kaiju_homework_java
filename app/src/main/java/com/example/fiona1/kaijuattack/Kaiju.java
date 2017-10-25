@@ -1,13 +1,13 @@
 package com.example.fiona1.kaijuattack;
 
-import com.example.fiona1.kaijuattack.behaviours.Attackable;
+import com.example.fiona1.kaijuattack.behaviours.Damageable;
 import com.example.fiona1.kaijuattack.behaviours.Moveable;
 
 /**
  * Created by Fiona1 on 25/10/2017.
  */
 
-public abstract class Kaiju implements Moveable {
+public abstract class Kaiju implements Moveable, Damageable {
     String name;
     int healthValue;
     int attackValue;
@@ -18,7 +18,7 @@ public abstract class Kaiju implements Moveable {
         this.attackValue = attackValue;
     }
 
-    public String roar(){
+    public String roar() {
         return "Rawrrr!";
 
     }
@@ -35,9 +35,17 @@ public abstract class Kaiju implements Moveable {
         return attackValue;
     }
 
-    public String attack(Attackable target){
+    public String attack(Damageable target) {
         target.takeDamage(attackValue);
-        return name + " attacked with damage "+attackValue;
+        if (target.getHealthValue() > 0) {
+            return (target.getName() + " survived the attack from " + name + " and has " + target.getHealthValue() + " health left");
+        } else {
+            return ("Oh no! " + target.getName() + " was destroyed by the attack from " + name);
+        }
+    }
+
+    public void takeDamage(int damageValue) {
+        this.healthValue -= damageValue;
     }
 
 

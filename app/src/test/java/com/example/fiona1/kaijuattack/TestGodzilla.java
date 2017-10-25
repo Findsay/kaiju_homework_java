@@ -13,10 +13,13 @@ public class TestGodzilla {
     Godzilla godzilla;
     Artillery artillery;
 
+
     @Before
     public void setUp() throws Exception {
         godzilla = new Godzilla("Godzilla", 100, 25);
-        artillery = new Artillery("Starstreak", 50);
+        artillery = new Artillery("Starstreak", 50, 60);
+
+
     }
 
     @Test
@@ -42,12 +45,18 @@ public class TestGodzilla {
 
     @Test
     public void canAttack() throws Exception {
-        assertEquals("Godzilla attacked with damage 25", godzilla.attack(artillery));
+        assertEquals("Starstreak survived the attack from Godzilla and has 25 health left", godzilla.attack(artillery));
     }
 
     @Test
     public void canMove() throws Exception {
         assertEquals("Godzilla slithered away", godzilla.move());
 
+    }
+
+    @Test
+    public void canTakeDamage() throws Exception {
+        godzilla.takeDamage(50);
+        assertEquals(50, godzilla.getHealthValue());
     }
 }

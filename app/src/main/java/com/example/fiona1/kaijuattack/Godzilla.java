@@ -13,4 +13,6 @@ public class Godzilla extends Kaiju {
     public String move() {
         return name+ " slithered away";
     }
+
+
 }

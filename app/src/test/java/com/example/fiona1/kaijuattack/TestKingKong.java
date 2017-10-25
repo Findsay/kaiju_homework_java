@@ -13,10 +13,11 @@ public class TestKingKong {
     KingKong kingkong;
     Tank tank;
 
+
     @Before
     public void setUp() throws Exception {
         kingkong = new KingKong("King Kong", 150, 50);
-        tank = new Tank("Warrior", 200);
+        tank = new Tank("Warrior", 200, 75);
     }
 
     @Test
@@ -42,12 +43,18 @@ public class TestKingKong {
 
     @Test
     public void canAttack() throws Exception {
-        assertEquals("King Kong attacked with damage 50", kingkong.attack(tank));
+        assertEquals("Warrior survived the attack from King Kong and has 150 health left", kingkong.attack(tank));
     }
 
     @Test
     public void canMove() throws Exception {
         assertEquals("King Kong stomped away", kingkong.move());
 
+    }
+
+    @Test
+    public void canTakeDamage() throws Exception {
+        kingkong.takeDamage(50);
+        assertEquals(100, kingkong.getHealthValue());
     }
 }
