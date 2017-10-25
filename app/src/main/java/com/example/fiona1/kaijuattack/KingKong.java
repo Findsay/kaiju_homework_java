@@ -8,4 +8,9 @@ public class KingKong extends Kaiju {
     public KingKong(String name, int healthValue, int attackValue) {
         super(name, healthValue, attackValue);
     }
+
+    @Override
+    public String move() {
+        return name + " stomped away";
+    }
 }

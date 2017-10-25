@@ -44,4 +44,10 @@ public class TestKingKong {
     public void canAttack() throws Exception {
         assertEquals("King Kong attacked with damage 50", kingkong.attack(tank));
     }
+
+    @Test
+    public void canMove() throws Exception {
+        assertEquals("King Kong stomped away", kingkong.move());
+
+    }
 }

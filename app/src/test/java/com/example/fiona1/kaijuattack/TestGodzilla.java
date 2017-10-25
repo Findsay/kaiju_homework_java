@@ -44,4 +44,10 @@ public class TestGodzilla {
     public void canAttack() throws Exception {
         assertEquals("Godzilla attacked with damage 25", godzilla.attack(artillery));
     }
+
+    @Test
+    public void canMove() throws Exception {
+        assertEquals("Godzilla slithered away", godzilla.move());
+
+    }
 }
