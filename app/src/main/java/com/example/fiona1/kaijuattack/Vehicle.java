@@ -20,4 +20,8 @@ public abstract class Vehicle {
     public int getHealthValue() {
         return healthValue;
     }
+
+    public void takeDamage(int damageValue) {
+        this.healthValue -= damageValue;
+    }
 }

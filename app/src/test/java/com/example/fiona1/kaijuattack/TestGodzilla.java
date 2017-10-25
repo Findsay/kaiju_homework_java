@@ -11,10 +11,12 @@ import static org.junit.Assert.assertEquals;
 
 public class TestGodzilla {
     Godzilla godzilla;
+    Artillery artillery;
 
     @Before
     public void setUp() throws Exception {
         godzilla = new Godzilla("Godzilla", 100, 25);
+        artillery = new Artillery("Starstreak", 50);
     }
 
     @Test
@@ -38,5 +40,8 @@ public class TestGodzilla {
 
     }
 
-
+    @Test
+    public void canAttack() throws Exception {
+        assertEquals("Godzilla attacked with damage 25", godzilla.attack(artillery));
+    }
 }

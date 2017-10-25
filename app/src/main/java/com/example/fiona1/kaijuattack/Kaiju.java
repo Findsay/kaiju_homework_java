@@ -1,5 +1,7 @@
 package com.example.fiona1.kaijuattack;
 
+import com.example.fiona1.kaijuattack.behaviours.Attackable;
+
 /**
  * Created by Fiona1 on 25/10/2017.
  */
@@ -30,6 +32,11 @@ public abstract class Kaiju {
 
     public int getAttackValue() {
         return attackValue;
+    }
+
+    public String attack(Attackable target){
+        target.takeDamage(attackValue);
+        return name + " attacked with damage "+attackValue;
     }
 
 

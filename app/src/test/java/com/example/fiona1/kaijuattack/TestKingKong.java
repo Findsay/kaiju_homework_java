@@ -11,10 +11,12 @@ import static org.junit.Assert.assertEquals;
 
 public class TestKingKong {
     KingKong kingkong;
+    Tank tank;
 
     @Before
     public void setUp() throws Exception {
         kingkong = new KingKong("King Kong", 150, 50);
+        tank = new Tank("Warrior", 200);
     }
 
     @Test
@@ -36,5 +38,10 @@ public class TestKingKong {
     public void canRoar() throws Exception {
         assertEquals("Rawrrr!", kingkong.roar());
 
+    }
+
+    @Test
+    public void canAttack() throws Exception {
+        assertEquals("King Kong attacked with damage 50", kingkong.attack(tank));
     }
 }
