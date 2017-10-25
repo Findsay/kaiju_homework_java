@@ -19,4 +19,18 @@ public abstract class Kaiju {
         return "Rawrrr!";
 
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getHealthValue() {
+        return healthValue;
+    }
+
+    public int getAttackValue() {
+        return attackValue;
+    }
+
+
 }
