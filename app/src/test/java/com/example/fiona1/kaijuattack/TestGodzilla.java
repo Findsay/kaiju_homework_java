@@ -9,7 +9,7 @@ import static org.junit.Assert.assertEquals;
  * Created by Fiona1 on 25/10/2017.
  */
 
-public class GodzillaTest {
+public class TestGodzilla {
     Godzilla godzilla;
 
     @Before
@@ -30,6 +30,12 @@ public class GodzillaTest {
     @Test
     public void canGetAttackValue() throws Exception {
         assertEquals(25, godzilla.getAttackValue());
+    }
+
+    @Test
+    public void canRoar() throws Exception {
+        assertEquals("Rawrrr!", godzilla.roar());
+
     }
 
 

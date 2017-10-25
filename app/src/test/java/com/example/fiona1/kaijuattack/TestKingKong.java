@@ -31,4 +31,10 @@ public class TestKingKong {
     public void canGetAttackValue() throws Exception {
         assertEquals(50, kingkong.getAttackValue());
     }
+
+    @Test
+    public void canRoar() throws Exception {
+        assertEquals("Rawrrr!", kingkong.roar());
+
+    }
 }
