@@ -6,13 +6,13 @@ package com.example.fiona1.kaijuattack;
 
 public abstract class Kaiju {
     String name;
-    int health;
-    int attack;
+    int healthValue;
+    int attackValue;
 
-    public Kaiju(String name, int health, int attack) {
+    public Kaiju(String name, int healthValue, int attackValue) {
         this.name = name;
-        this.health = health;
-        this.attack = attack;
+        this.healthValue = healthValue;
+        this.attackValue = attackValue;
     }
 
     public String roar(){
